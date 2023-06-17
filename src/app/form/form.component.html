@@ -1,2 +1,10 @@
 <!-- FORM DOVE INSERIRE NUOVE TASK -->
 <p>Form</p>
+
+<form [formGroup]="newForm" (ngSubmit)="addTask()">
+
+    <label for="name">Inserisci il nome della nuova task:</label>
+    <input type="text" formControlName="name">
+
+    <input type="submit" value="AGGIUNGI" [disabled]="newForm.invalid">
+</form>

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 
 import { ToDoService } from '../../service/to-do.service';
 import { ToDoDTO } from 'src/dto/tododto';
@@ -22,8 +21,6 @@ export class ListComponent implements OnInit{
 
   getAll(){
 
-    this.toDoList = this.service.getAll();
-    console.log(this.toDoList);
-    
+    this.toDoList = this.service.getAll();    
   }
 }
