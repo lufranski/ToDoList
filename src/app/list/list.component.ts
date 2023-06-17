@@ -23,4 +23,9 @@ export class ListComponent implements OnInit{
 
     this.toDoList = this.service.getAll();    
   }
+
+  delete(index: number){
+
+    this.service.deleteTask(index);
+  }
 }
