@@ -4,8 +4,14 @@
   <!-- TODO LIST SCHEMA -->
   <h1>ToDo List</h1>
   
+  <div class="container">
+    
+    <div (click)="filter('done')">Done</div>
+    <div (click)="filter('to do')">ToDo</div>
+  </div>
+
   <!-- COMPONENTE LISTA -->
-  <app-list></app-list>
+  <app-list [inputStatus]="inputStatus"></app-list>
   
   <!-- COMPONENTE -->
   <app-form></app-form>

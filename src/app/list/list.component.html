@@ -1,10 +1,20 @@
 <!-- LISTA DELLE ATTIVITA' DA SVOLGERE -->
 <p>Lista</p>
 
+<div class="container">
+    
+    <p>Total: {{ totalTasks }}</p>
+    <p>Done: {{ doneTasks }}</p>
+</div>
+
 <ul>
     <li *ngFor="let task of toDoList; index as id">
-        {{ task.name }}
+        <ng-container *ngIf="task.status === inputStatus">
 
-        <button (click)="delete(id)">X</button>
+            {{ task.name }}
+    
+            <button (click)="delete(id)">X</button>
+            <button (click)="completeTask(id)">V</button>
+        </ng-container>
     </li>
 </ul>
