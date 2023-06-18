@@ -1,0 +1,72 @@
+.border {
+
+    width: 50%;
+    height: 40vh;
+    margin: 1rem auto;
+    border: 2px solid #add0ec;
+    border-radius: 20px;
+    padding: .2rem;
+
+    .content {
+
+        background-color: #add0ec;
+        height: 100%;
+        border-radius: 20px;
+        padding: 3rem;
+        position: relative;
+        
+        p {
+
+            color: #146C94;
+            font-weight: 700;
+            font-size: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .date, .description {
+
+            font-size: 13px;
+            color: #fff;
+        }
+
+        .description {
+
+            width: 50%;
+            height: 60%;
+            overflow-y: auto;
+        }
+
+        form {
+
+            position: absolute;
+            right: .5rem;
+            top: 40%;
+            
+            input[type="text"] {
+
+                width: 100%;
+                padding: .5rem;
+            }
+
+            .btn {
+    
+                appearance: none;
+                border: 2px solid #146C94;
+                padding: .5rem;
+                border-radius: 20px;
+                background-color: transparent;
+                color: #146C94;
+                font-weight: 700;
+                margin: .2rem 60%;
+                cursor: pointer;
+                transition: .4s ease-in-out;
+            
+                &:hover {
+            
+                    background-color: #146C94;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

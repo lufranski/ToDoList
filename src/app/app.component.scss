@@ -2,11 +2,11 @@
 
     width: 80%;
     margin: 0 auto;
+    padding: 1rem;
 
     .hero {
 
-        height: 40vh;
-        margin-top: 10px;
+        height: calc(40vh - 1rem);
         background-image: url('../assets/WP.jpg');
         background-size: contain;
         border-radius: 40px 0 40px 0;

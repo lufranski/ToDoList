@@ -21,7 +21,7 @@ import { DetailComponent } from './detail/detail.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

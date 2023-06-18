@@ -1,10 +1,18 @@
-<div class="fullscreen">
+<div class="border">
     
-    <p>{{ task.name }}</p>
+    <div class="content">
 
-    <form [formGroup]="myForm" (ngSubmit)="updateTask()">
+        <p>{{ task.name }}</p>
+        <p class="date">20 June 2023</p>
+        
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio maxime expedita sint sit veritatis dolorum, 
+            voluptatum minima officia, vero, ad magnam. Possimus, voluptas fuga voluptatem esse perspiciatis voluptate aperiam 
+            inventore.</p>
 
-        <input type="text" formControlName="taskName" [ngModel]="taskNameControl.value">
-        <input type="submit" value="AGGIORNA TASK">
-    </form>
+        <form [formGroup]="myForm" (ngSubmit)="updateTask()">
+            
+            <input type="text" formControlName="taskName" [ngModel]="taskNameControl.value">
+            <input class="btn" type="submit" value="AGGIORNA">
+        </form>
+    </div>
 </div>
