@@ -3,6 +3,32 @@
     width: 80%;
     margin: 0 auto;
 
+    .hero {
+
+        height: 40vh;
+        background-image: url('../assets/WP.jpg');
+        background-size: contain;
+        border-radius: 40px 0 40px 0;
+        position: relative;
+
+        h1 {
+
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-30%, -50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            color: #146C94;
+
+            span {
+
+                -webkit-text-stroke: 1px #fff;
+                color: transparent;
+            }
+        }
+    }
+
     .container {
 
         display: flex;
