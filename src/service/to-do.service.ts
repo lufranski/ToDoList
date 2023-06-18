@@ -9,6 +9,10 @@ import { Status } from 'src/dto/status';
 export class ToDoService {
 
   private todoList: ToDoDTO[] = [];
+  private task: ToDoDTO = {
+    name: '',
+    status: Status.todo
+  };
   taskListChanged = new EventEmitter<ToDoDTO[]>();
 
   constructor() { 
@@ -42,5 +46,14 @@ export class ToDoService {
 
     this.todoList[index].status = Status.done;
     this.taskListChanged.emit(this.todoList);
+  }
+
+  readTask(id: number): ToDoDTO{
+    
+    if( id >= 0 && id < this.todoList.length){
+
+      return this.todoList[id];
+    }
+    return this.todoList[id];
   }
 }

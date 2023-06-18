@@ -5,6 +5,8 @@ import { ToDoService } from '../../service/to-do.service';
 import { ToDoDTO } from 'src/dto/tododto';
 import { Status } from 'src/dto/status';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -18,7 +20,7 @@ export class ListComponent implements OnInit{
   @Input() inputStatus: string = Status.todo;
 
 
-  constructor(private service: ToDoService){}
+  constructor(private service: ToDoService, private router: Router){}
 
   ngOnInit(): void {
     
@@ -49,5 +51,10 @@ export class ListComponent implements OnInit{
   getCounters(){
 
     this.totalTasks = this.toDoList.length;
+  }
+
+  goToDetail(index: number): void{
+
+    this.router.navigate(['/detail', index]);
   }
 }

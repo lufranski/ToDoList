@@ -21,10 +21,12 @@
     <div (click)="filter('done')">Done</div>
     <div (click)="filter('to do')">ToDo</div>
   </div>
-
+  
   <!-- COMPONENTE LISTA -->
-  <app-list [inputStatus]="inputStatus"></app-list>
+  <!-- <app-list [inputStatus]="inputStatus"></app-list> -->
   
   <!-- COMPONENTE -->
-  <app-form></app-form>
+  <!-- <app-form></app-form> -->
+
+  <router-outlet></router-outlet>
 </div>
