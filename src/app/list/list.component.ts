@@ -34,26 +34,20 @@ export class ListComponent implements OnInit{
   getAll(){
     
     this.toDoList = this.service.getAll();    
-    console.log(this.toDoList);
-    this.getCounters();
   }
 
   delete(task: ToDoDTO){
 
     this.service.deleteTask(task);
-    this.getAll();
   }
 
   completeTask(index: number){
 
     this.service.completeTask(index);
-    // this.doneTasks = this.service.countDoneOnly();    
-    this.totalTasks = this.toDoList.length;
   }
 
   getCounters(){
 
     this.totalTasks = this.toDoList.length;
-    // this.doneTasks = this.service.countDoneOnly();
   }
 }
