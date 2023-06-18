@@ -6,6 +6,7 @@
     .hero {
 
         height: 40vh;
+        margin-top: 10px;
         background-image: url('../assets/WP.jpg');
         background-size: contain;
         border-radius: 40px 0 40px 0;
@@ -14,9 +15,9 @@
         h1 {
 
             position: absolute;
-            top: 30%;
+            top: 40%;
             left: 50%;
-            transform: translate(-30%, -50%);
+            transform: translate(-40%, -50%);
             font-family: 'Playfair Display', serif;
             font-size: 60px;
             color: #146C94;
