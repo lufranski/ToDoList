@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { ToDoDTO } from '../dto/tododto';
 import { toDoList } from '../data/todolist';
 import { Status } from 'src/dto/status';
@@ -9,6 +9,7 @@ import { Status } from 'src/dto/status';
 export class ToDoService {
 
   private todoList: ToDoDTO[] = [];
+  taskListChanged = new EventEmitter<ToDoDTO[]>();
 
   constructor() { 
 
@@ -20,28 +21,26 @@ export class ToDoService {
     return this.todoList;
   }
 
-  addTask(item: ToDoDTO): void{
+  addTask(task: ToDoDTO): void{
 
-    this.todoList.push(item);
+    this.todoList.push(task);
+    this.taskListChanged.emit(this.todoList);
   }
 
-  deleteTask(index: number): void{
+  deleteTask(task: ToDoDTO): void{
 
-    this.todoList.splice(index, 1);
+    const index = this.todoList.indexOf(task);
+    
+    if(index > -1){
+
+      this.todoList.splice(index, 1);
+      this.taskListChanged.emit(this.todoList);
+    }
   }
 
   completeTask(index: number): void{
 
     this.todoList[index].status = Status.done;
-  }
-
-  countAll(): number{
-
-    return this.todoList.length;
-  }
-
-  countDoneOnly(): number{
-
-    return this.todoList.filter( task => task.status === Status.done).length;
+    this.taskListChanged.emit(this.todoList);
   }
 }

@@ -14,11 +14,6 @@ import { ToDoService } from 'src/service/to-do.service';
 export class FormComponent implements OnInit{
 
   newForm: FormGroup = new FormGroup({});
-  taskToAdd: ToDoDTO = {
-
-    name: '',
-    status: Status.todo
-  };
 
   constructor(private formBuilder: FormBuilder, private service: ToDoService){}
 
@@ -35,8 +30,9 @@ export class FormComponent implements OnInit{
     if(this.newForm.valid){
 
       const taskName = this.newForm.value.name;
-      this.taskToAdd.name = taskName;
-      this.service.addTask(this.taskToAdd);
+      // Creo una nuova istanza di ToDoDTO per evitare sovrascritture in inserimenti multipli
+      const taskToAdd: ToDoDTO = { name: taskName, status: Status.todo };
+      this.service.addTask(taskToAdd);
       this.newForm.reset();      
     }
   }

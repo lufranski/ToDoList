@@ -24,28 +24,36 @@ export class ListComponent implements OnInit{
     
     this.getAll();
     this.getCounters();
+    this.service.taskListChanged.subscribe( tasks => {
+
+      this.totalTasks = tasks.length;
+      this.doneTasks = tasks.filter( task => task.status === Status.done).length;
+    })
   }
   
   getAll(){
     
     this.toDoList = this.service.getAll();    
     console.log(this.toDoList);
+    this.getCounters();
   }
 
-  delete(index: number){
+  delete(task: ToDoDTO){
 
-    this.service.deleteTask(index);
+    this.service.deleteTask(task);
+    this.getAll();
   }
 
   completeTask(index: number){
 
     this.service.completeTask(index);
-    this.doneTasks = this.service.countDoneOnly();    
+    // this.doneTasks = this.service.countDoneOnly();    
+    this.totalTasks = this.toDoList.length;
   }
 
   getCounters(){
 
-    this.totalTasks = this.service.countAll();
-    this.doneTasks = this.service.countDoneOnly();
+    this.totalTasks = this.toDoList.length;
+    // this.doneTasks = this.service.countDoneOnly();
   }
 }
