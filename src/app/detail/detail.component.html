@@ -1,4 +1,10 @@
 <div class="fullscreen">
     
     <p>{{ task.name }}</p>
+
+    <form [formGroup]="myForm" (ngSubmit)="updateTask()">
+
+        <input type="text" formControlName="taskName" [ngModel]="taskNameControl.value">
+        <input type="submit" value="AGGIORNA TASK">
+    </form>
 </div>

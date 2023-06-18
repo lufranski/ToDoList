@@ -8,10 +8,5 @@ import { Status } from '../dto/status';
 })
 export class AppComponent{
   title = 'ToDoList';
-  inputStatus: string = Status.todo;
-
-  filter(status: string){
-
-    this.inputStatus = status;
-  }
+  
 }

@@ -56,4 +56,13 @@ export class ToDoService {
     }
     return this.todoList[id];
   }
+
+  updateTask(id: number, task: ToDoDTO): void {
+    
+    if (id >= 0 && id < this.todoList.length) {
+      this.todoList[id] = task;
+      this.taskListChanged.emit(this.todoList); //Emette una copia della lista aggiornata
+    }
+  }
+  
 }
